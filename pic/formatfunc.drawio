@@ -1,0 +1,51 @@
+<mxfile host="Electron" modified="2023-10-24T17:24:04.511Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="jyBjwgs8TDtxbq7Uwewq" version="21.7.5" type="device">
+  <diagram name="第 1 页" id="UbGmIedTSepZwnSH-1so">
+    <mxGraphModel dx="766" dy="462" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="O_EUrbB-JDLWvfvD6et9-2" target="O_EUrbB-JDLWvfvD6et9-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-14" value="版式设置" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="O_EUrbB-JDLWvfvD6et9-1">
+          <mxGeometry x="0.017" y="-1" relative="1" as="geometry">
+            <mxPoint y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-2" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=#000000;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="200" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="O_EUrbB-JDLWvfvD6et9-4" target="O_EUrbB-JDLWvfvD6et9-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-4" value="设置字号" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="570" y="325" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="O_EUrbB-JDLWvfvD6et9-6" target="O_EUrbB-JDLWvfvD6et9-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-6" value="设置字体" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="440" y="325" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="O_EUrbB-JDLWvfvD6et9-8" target="O_EUrbB-JDLWvfvD6et9-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-8" value="设置自动换行" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="310" y="325" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-9" value="" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;perimeter=ellipsePerimeter;outline=end;symbol=terminate;rounded=0;shadow=0;comic=0;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="710" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-10" value="采用将文本转化为HTML文本的方式，并通过设置换行标准确保在单词间换行" style="shape=note;whiteSpace=wrap;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;size=20;" vertex="1" parent="1">
+          <mxGeometry x="252.26999999999998" y="371" width="215.47" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="O_EUrbB-JDLWvfvD6et9-11" style="edgeStyle=none;rounded=0;html=1;dashed=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=oval;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="O_EUrbB-JDLWvfvD6et9-10" target="O_EUrbB-JDLWvfvD6et9-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="486" y="400" as="sourcePoint" />
+            <mxPoint x="470" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
