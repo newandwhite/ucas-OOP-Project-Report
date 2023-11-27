@@ -1,0 +1,470 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>核心流程设计分析（拓展要求） · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.html" />
+    
+    
+    <link rel="prev" href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/kuai-jie-jian-she-zhi.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../xiang-mu-jie-shao.html">
+            
+                <a href="../xiang-mu-jie-shao.html">
+            
+                    
+                    项目介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ban-ben-geng-xin-shuo-ming.html">
+            
+                <a href="../ban-ben-geng-xin-shuo-ming.html">
+            
+                    
+                    版本更新说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../gong-neng-fen-xi-yu-jian-mo.html">
+            
+                <a href="../gong-neng-fen-xi-yu-jian-mo.html">
+            
+                    
+                    功能分析与建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../he-xin-liu-cheng-she-ji-fen-xi.html">
+            
+                <a href="../he-xin-liu-cheng-she-ji-fen-xi.html">
+            
+                    
+                    核心流程设计分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09.html">
+            
+                    
+                    核心流程设计分析（基本要求）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/chuang-kou-yu-wen-ben-bian-ji-qi.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/chuang-kou-yu-wen-ben-bian-ji-qi.html">
+            
+                    
+                    窗口与文本编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/wen-jian-cao-zuo.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/wen-jian-cao-zuo.html">
+            
+                    
+                    文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/bian-ji-cao-zuo.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/bian-ji-cao-zuo.html">
+            
+                    
+                    编辑操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/ban-shi-cao-zuo.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/ban-shi-cao-zuo.html">
+            
+                    
+                    版式操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/yan-se-she-zhi.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/yan-se-she-zhi.html">
+            
+                    
+                    颜色设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/kuai-jie-jian-she-zhi.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/kuai-jie-jian-she-zhi.html">
+            
+                    
+                    快捷键设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09.html">
+            
+                    
+                    核心流程设计分析（拓展要求）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.html">
+            
+                    
+                    UI美化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.html">
+            
+                    
+                    图片插入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/cha-ru-biao-ge.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/cha-ru-biao-ge.html">
+            
+                    
+                    插入表格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.html">
+            
+                    
+                    MarkDown编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../gao-ji-she-ji-yi-tu.html">
+            
+                <a href="../gao-ji-she-ji-yi-tu.html">
+            
+                    
+                    高级设计意图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >核心流程设计分析（拓展要求）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x6838;&#x5FC3;&#x6D41;&#x7A0B;&#x8BBE;&#x8BA1;&#x5206;&#x6790;&#xFF08;&#x62D3;&#x5C55;&#x8981;&#x6C42;&#xFF09;">&#x6838;&#x5FC3;&#x6D41;&#x7A0B;&#x8BBE;&#x8BA1;&#x5206;&#x6790;&#xFF08;&#x62D3;&#x5C55;&#x8981;&#x6C42;&#xFF09;</h2>
+<p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x5927;&#x6982;&#x5BF9;&#x5E94;&#x8BBE;&#x8BA1;&#x5B9E;&#x73B0;&#x7C7B;&#x5927;&#x4F5C;&#x4E1A;&#x7684;&#x7684;&#x62D3;&#x5C55;&#x8981;&#x6C42;&#x6863;&#xFF0C;&#x76EE;&#x524D;&#x6709;UI&#x7F8E;&#x5316;&#x3001;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x3001;&#x63D2;&#x5165;&#x8868;&#x683C;&#x548C;MarkDown&#x7F16;&#x8F91;&#x5668;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/kuai-jie-jian-she-zhi.html" class="navigation navigation-prev " aria-label="Previous page: 快捷键设置">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.html" class="navigation navigation-next " aria-label="Next page: UI美化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"核心流程设计分析（拓展要求）","level":"1.5.2","depth":2,"next":{"title":"UI美化","level":"1.5.2.1","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.md","articles":[]},"previous":{"title":"快捷键设置","level":"1.5.1.6","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/kuai-jie-jian-she-zhi.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/kuai-jie-jian-she-zhi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09.md","mtime":"2023-11-27T08:46:31.063Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-27T14:54:49.048Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
