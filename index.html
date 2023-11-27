@@ -390,8 +390,153 @@
 <h4 id="author">Author</h4>
 <p>&#x9EC4;&#x94B0;&#x4E54;</p>
 <h4 id="software-architecture">Software Architecture</h4>
-<p>Software architecture description</p>
-<h4 id="installation">Installation</h4>
+<pre><code>|-- undefined
+    |-- .gitignore
+    |-- pom.xml
+    |-- TimingFramework-0.55.jar
+    |-- .idea
+    |   |-- .gitignore
+    |   |-- compiler.xml
+    |   |-- encodings.xml
+    |   |-- jarRepositories.xml
+    |   |-- misc.xml
+    |   |-- vcs.xml
+    |   |-- workspace.xml
+    |   |-- libraries
+    |       |-- lib.xml
+    |-- demo
+    |   |-- mvnw
+    |   |-- mvnw.cmd
+    |   |-- pom.xml
+    |   |-- .mvn
+    |   |   |-- wrapper
+    |   |       |-- maven-wrapper.jar
+    |   |       |-- maven-wrapper.properties
+    |   |-- src
+    |       |-- main
+    |           |-- java
+    |           |   |-- module-info.java
+    |           |   |-- com
+    |           |       |-- example
+    |           |           |-- demo
+    |           |               |-- HelloApplication.java
+    |           |               |-- HelloController.java
+    |           |-- resources
+    |               |-- com
+    |                   |-- example
+    |                       |-- demo
+    |                           |-- hello-view.fxml
+    |-- pic
+    |   |-- markdownicon.png
+    |-- src
+    |   |-- main
+    |   |   |-- java
+    |   |   |   |-- Function_Color.java
+    |   |   |   |-- Function_Edit.java
+    |   |   |   |-- Function_File.java
+    |   |   |   |-- Function_Format.java
+    |   |   |   |-- Function_Function.java
+    |   |   |   |-- Function_Insertion.java
+    |   |   |   |-- GUI.java
+    |   |   |   |-- KeyHandler.java
+    |   |   |   |-- cloud
+    |   |   |   |   |-- CloudStorageUIExample.java
+    |   |   |   |-- insertpicture
+    |   |   |   |   |-- ResizableImageComponent.java
+    |   |   |   |-- inserttable
+    |   |   |   |   |-- CustomCellRenderer.java
+    |   |   |   |   |-- JTextPaneWithTable.java
+    |   |   |   |-- insertvideo
+    |   |   |   |   |-- VideoPlayerExample.java
+    |   |   |   |-- markdownparser
+    |   |   |   |   |-- FlexmarkMarkdownEditor.java
+    |   |   |   |   |-- MarkdownEditor.java
+    |   |   |   |-- org
+    |   |   |   |   |-- example
+    |   |   |   |       |-- Main.java
+    |   |   |   |-- scalableimg
+    |   |   |   |   |-- JTextPaneWithScalableImage.java
+    |   |   |   |   |-- ScalableImagePanel.java
+    |   |   |   |-- scroll
+    |   |   |       |-- PolygonCorner.java
+    |   |   |       |-- ScrollBarWin11UI.java
+    |   |   |       |-- ScrollPaneWin11.java
+    |   |   |       |-- Test2.java
+    |   |   |-- resources
+    |   |       |-- org
+    |   |           |-- example
+    |   |               |-- application.css
+    |   |-- test
+    |       |-- java
+    |           |-- org
+    |               |-- example
+    |                   |-- AppTest.java
+    |-- target
+        |-- classes
+        |   |-- Function_Color.class
+        |   |-- Function_Edit.class
+        |   |-- Function_File.class
+        |   |-- Function_Format$1$1$1.class
+        |   |-- Function_Format$1$1$2.class
+        |   |-- Function_Format$1$1.class
+        |   |-- Function_Format$1.class
+        |   |-- Function_Format.class
+        |   |-- Function_Function.class
+        |   |-- Function_Insertion.class
+        |   |-- GUI$1.class
+        |   |-- GUI.class
+        |   |-- KeyHandler.class
+        |   |-- cloud
+        |   |   |-- CloudStorageUIExample$1.class
+        |   |   |-- CloudStorageUIExample.class
+        |   |-- insertpicture
+        |   |   |-- ResizableImageComponent$1.class
+        |   |   |-- ResizableImageComponent.class
+        |   |-- inserttable
+        |   |   |-- CustomCellRenderer.class
+        |   |   |-- JTextPaneWithTable$1.class
+        |   |   |-- JTextPaneWithTable$MultiLineTableCellRenderer.class
+        |   |   |-- JTextPaneWithTable.class
+        |   |-- markdownparser
+        |   |   |-- FlexmarkMarkdownEditor$1.class
+        |   |   |-- FlexmarkMarkdownEditor$2.class
+        |   |   |-- FlexmarkMarkdownEditor$3.class
+        |   |   |-- FlexmarkMarkdownEditor$4.class
+        |   |   |-- FlexmarkMarkdownEditor$5.class
+        |   |   |-- FlexmarkMarkdownEditor$6.class
+        |   |   |-- FlexmarkMarkdownEditor$7.class
+        |   |   |-- FlexmarkMarkdownEditor$CustomScrollBarUI$1.class
+        |   |   |-- FlexmarkMarkdownEditor$CustomScrollBarUI$2.class
+        |   |   |-- FlexmarkMarkdownEditor$CustomScrollBarUI.class
+        |   |   |-- FlexmarkMarkdownEditor.class
+        |   |   |-- MarkdownEditor$1.class
+        |   |   |-- MarkdownEditor$2.class
+        |   |   |-- MarkdownEditor$3.class
+        |   |   |-- MarkdownEditor.class
+        |   |-- org
+        |   |   |-- example
+        |   |       |-- application.css
+        |   |       |-- Main.class
+        |   |-- scalableimg
+        |   |   |-- JTextPaneWithScalableImage$1.class
+        |   |   |-- JTextPaneWithScalableImage.class
+        |   |   |-- ScalableImagePanel$1.class
+        |   |   |-- ScalableImagePanel$2.class
+        |   |   |-- ScalableImagePanel.class
+        |   |-- scroll
+        |       |-- PolygonCorner.class
+        |       |-- ScrollBarWin11UI$1.class
+        |       |-- ScrollBarWin11UI$2.class
+        |       |-- ScrollBarWin11UI$ScrollButton$1.class
+        |       |-- ScrollBarWin11UI$ScrollButton.class
+        |       |-- ScrollBarWin11UI.class
+        |       |-- ScrollPaneWin11$ScrollLayout.class
+        |       |-- ScrollPaneWin11.class
+        |       |-- Test2$1.class
+        |       |-- Test2.class
+        |-- generated-sources
+            |-- annotations
+</code></pre><h4 id="installation">Installation</h4>
 <ol>
 <li>&#x5B89;&#x88C5;java&#xFF0C;&#x914D;&#x7F6E;&#x76F8;&#x5E94;&#x73AF;&#x5883;</li>
 <li>&#x914D;&#x7F6E;maven&#x73AF;&#x5883;&#xFF0C;&#x65B9;&#x4FBF;&#x8F7D;&#x5165;&#x4F9D;&#x8D56;&#x5305;&#x6216;&#x5E93;&#x3002;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x66F4;&#x597D;&#x7684;UI&#x754C;&#x9762;&#x4E0E;&#x5B9E;&#x73B0;markdown&#x529F;&#x80FD;&#xFF0C;&#x76EE;&#x524D;&#x9700;&#x4F9D;&#x8D56;javafx&#x4E0E;flexmark</li>
@@ -454,7 +599,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"项目介绍","level":"1.2","depth":1,"path":"xiang-mu-jie-shao.md","ref":"xiang-mu-jie-shao.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2023-11-27T09:23:09.829Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-27T14:54:49.048Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"项目介绍","level":"1.2","depth":1,"path":"xiang-mu-jie-shao.md","ref":"xiang-mu-jie-shao.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2023-11-27T16:15:03.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-27T16:16:05.026Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
