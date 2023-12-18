@@ -17,5 +17,7 @@
     * [图片插入](he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md)
     * [插入表格](he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/cha-ru-biao-ge.md)
     * [MarkDown编辑器](he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.md)
+  * [核心流程设计分析（硬核要求）](he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.md)
+    * [云存储接入](he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.md)
 * [高级设计意图](gao-ji-she-ji-yi-tu.md)
 

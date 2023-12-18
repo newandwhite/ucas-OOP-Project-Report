@@ -19,3 +19,6 @@
     gui.textArea.setForeground(Color.black);
 ```
 
+#### 最终效果如下：
+
+

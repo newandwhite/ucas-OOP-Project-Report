@@ -16,10 +16,11 @@
 
 ********
 
+## 流程图
 ### 基本文字排版
 ![](/assets/createwindow.png)
 
-### 保存/读取
+### 文件操作
 ![](/assets/filefunc.png)
 
 ### 字体字号
@@ -29,3 +30,22 @@
 ![](/assets/colorfunc.png)
 
 
+## 类图
+以下是最终代码实现后的类图：
+### 主面板类图：
+![](/pic/umlpic/guiuml.png)
+
+### UI界面美化类图
+![](/pic/umlpic/scrolluml.png)
+
+### 图片插入类图
+![](/pic/umlpic/pictureuml.png)
+
+### 插入表格类图
+![](/pic/umlpic/tableuml.png)
+
+### MarkDown编译器类图
+![](/pic/umlpic/mdparderuml.png)
+
+### 云存储接入类图
+![](/pic/umlpic/clouduml.png)

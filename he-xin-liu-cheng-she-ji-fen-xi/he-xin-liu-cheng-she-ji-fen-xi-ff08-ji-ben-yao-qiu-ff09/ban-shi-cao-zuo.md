@@ -1,12 +1,17 @@
 ### 版式操作
 1. 自动换行：
-原先采用的JTextArea对象有自动换行的设置，但是JTextPane没有单独的相关函数。因此一种调整自动换行的思路是将当前文本转换为HTML再设置换行。
+原先采用的JTextArea对象有自动换行的设置，但是JTextPane没有单独的相关函数。因此一种调整自动换行的思路是将当前文本转换为HTML再设置换行。其中，针对不同类型的视图（InlineView 和 ParagraphView），进行了特殊的处理以实现自定义的换行行为。
+
+    InlineView：
 ```
-    if(v instanceof InlineView){
+     if(v instanceof InlineView){
         return new InlineView(e){
+            // 重写方法，设置换行权重
             public int getBreakWeight(int axis, float pos, float len) {
                 return GoodBreakWeight;
             }
+            
+            // 重写方法，处理换行
             public View breakView(int axis, int p0, float pos, float len) {
                 if(axis == View.X_AXIS) {
                     checkPainter();
@@ -44,6 +49,9 @@
 ```
 3. 字体大小：利用createFont函数的参数传入字体大小，比如：
 ```
-format.createFont(8);
+    format.createFont(8);
 ```
+
+#### 最终效果如下：
+![](/pic/format.png)
 
