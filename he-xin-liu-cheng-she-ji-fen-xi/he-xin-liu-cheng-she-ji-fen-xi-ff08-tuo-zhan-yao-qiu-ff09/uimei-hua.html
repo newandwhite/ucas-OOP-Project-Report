@@ -323,6 +323,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.3" data-path="../he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.html">
+            
+                <a href="../he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.html">
+            
+                    
+                    核心流程设计分析（硬核要求）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html">
+            
+                <a href="../he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html">
+            
+                    
+                    云存储接入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -388,8 +420,233 @@
                                 
                                 <h3 id="ui&#x7F8E;&#x5316;">UI&#x7F8E;&#x5316;</h3>
 <ol>
-<li><p>&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316;&#xFF1A; &#x91CD;&#x5199;&#x8986;&#x76D6;&#x539F;&#x5148;&#x7684;JScrollPane&#x6A21;&#x5757;&#xFF0C;&#x5E76;&#x5728;&#x4E3B;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#x3002;
-&#x539F;&#x5148;&#x7684;scroller&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<li><p>&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316;&#xFF1A; &#x91CD;&#x5199;&#x8986;&#x76D6;&#x539F;&#x5148;&#x7684;JScrollPane&#x6A21;&#x5757;&#xFF0C;&#x5E76;&#x5728;&#x4E3B;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code>public class ScrollBarWin11UI extends BasicScrollBarUI {
+
+ private Animator animator;
+ private float animate;
+ private boolean show;
+ private boolean hover;
+ private boolean press;
+ private final int scrollSize = 14;
+ private final MouseAdapter mouseEvent;
+
+ public static ComponentUI createUI(JComponent c) {
+     return new ScrollBarWin11UI();
+ }
+
+ public ScrollBarWin11UI() {
+     mouseEvent = new MouseAdapter() {
+         @Override
+         public void mousePressed(MouseEvent e) {
+             press = true;
+         }
+
+         @Override
+         public void mouseReleased(MouseEvent e) {
+             press = false;
+             if (!hover) {
+                 start(false);
+             }
+         }
+
+         @Override
+         public void mouseEntered(MouseEvent e) {
+             hover = true;
+             if (!show) {
+                 start(true);
+             }
+         }
+
+         @Override
+         public void mouseExited(MouseEvent e) {
+             hover = false;
+             if (!press) {
+                 start(false);
+             }
+         }
+     };
+ }
+
+ @Override
+ public void installUI(JComponent c) {
+     super.installUI(c);
+     c.setPreferredSize(new Dimension(scrollSize, scrollSize));
+     c.addMouseListener(mouseEvent);
+     c.setForeground(new Color(150, 150, 150));
+     initAnimator();
+ }
+
+ private void start(boolean show) {
+     if (animator.isRunning()) {
+         float f = animator.getTimingFraction();
+         animator.stop();
+         animator.setStartFraction(1f - f);
+     } else {
+         animator.setStartFraction(0f);
+     }
+     this.show = show;
+     animator.start();
+ }
+
+ private void initAnimator() {
+     animator = new Animator(350, new TimingTargetAdapter() {
+         @Override
+         public void timingEvent(float fraction) {
+             if (show) {
+                 animate = fraction;
+             } else {
+                 animate = 1f - fraction;
+             }
+             if (scrollbar != null) {
+                 scrollbar.repaint();
+             }
+         }
+     });
+     animator.setResolution(5);
+     animator.setAcceleration(.5f);
+     animator.setDeceleration(.5f);
+     animator.setStartDelay(100);
+ }
+
+ @Override
+ protected JButton createIncreaseButton(int orientation) {
+     return new ScrollButton(scrollbar.getOrientation(), true);
+ }
+
+ @Override
+ protected JButton createDecreaseButton(int orientation) {
+     return new ScrollButton(scrollbar.getOrientation(), false);
+ }
+
+ @Override
+ protected void paintTrack(Graphics g, JComponent c, Rectangle trackBounds) {
+     Graphics2D g2 = (Graphics2D) g.create();
+     g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+     g2.setComposite(AlphaComposite.SrcOver.derive(animate * 0.5f));
+     g2.setColor(scrollbar.getForeground().brighter());
+     g2.fill(new Rectangle2D.Double(trackBounds.x, trackBounds.y, trackBounds.width, trackBounds.height));
+     g2.dispose();
+ }
+
+ @Override
+ protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
+     Graphics2D g2 = (Graphics2D) g.create();
+     g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+     g2.setColor(scrollbar.getForeground());
+     double border = scrollSize * 0.3f - (animate * 1);
+     double sp = 10 * animate;
+     g2.setComposite(AlphaComposite.SrcOver.derive(1f - (1f - animate) * 0.3f));
+     if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {
+         double width = thumbBounds.getWidth() - border * 2;
+         double height = thumbBounds.getHeight() - sp * 2;
+         g2.fill(new RoundRectangle2D.Double(thumbBounds.x + border, thumbBounds.y + sp, width, height, width, width));
+     } else {
+         double width = thumbBounds.getWidth() - sp * 2;
+         double height = thumbBounds.getHeight() - border * 2;
+         g2.fill(new RoundRectangle2D.Double(thumbBounds.x + sp, thumbBounds.y + border, width, height, height, height));
+     }
+     g2.dispose();
+     g.dispose();
+ }
+
+ private class ScrollButton extends JButton {
+
+     private final int orientation;
+     private final boolean isIncrease;
+     private final Shape arrow;
+     private boolean mouseHover;
+     private boolean mousePress;
+
+     public ScrollButton(int orientation, boolean isIncrease) {
+         this.orientation = orientation;
+         this.isIncrease = isIncrease;
+         setContentAreaFilled(false);
+         setPreferredSize(new Dimension(scrollSize, scrollSize));
+         List&lt;Point2D&gt; points = new ArrayList&lt;&gt;();
+         double width = scrollSize * 0.8f;
+         double height = scrollSize * 0.7f;
+         if (orientation == JScrollBar.VERTICAL) {
+             if (isIncrease) {
+                 points.add(new Point2D.Double(width / 2, height));
+                 points.add(new Point2D.Double(width, 0));
+                 points.add(new Point2D.Double(0, 0));
+             } else {
+                 points.add(new Point2D.Double(width / 2, 0));
+                 points.add(new Point2D.Double(width, height));
+                 points.add(new Point2D.Double(0, height));
+             }
+         } else {
+             if (isIncrease) {
+                 points.add(new Point2D.Double(0, 0));
+                 points.add(new Point2D.Double(width, height / 2));
+                 points.add(new Point2D.Double(0, height));
+             } else {
+                 points.add(new Point2D.Double(width, 0));
+                 points.add(new Point2D.Double(0, height / 2));
+                 points.add(new Point2D.Double(width, height));
+             }
+         }
+         arrow = new PolygonCorner().getRoundedGeneralPathFromPoints(points, scrollSize * 0.5f);
+         addMouseListener(mouseEvent);
+         addMouseListener(new MouseAdapter() {
+             @Override
+             public void mouseEntered(MouseEvent e) {
+                 mouseHover = true;
+             }
+
+             @Override
+             public void mouseExited(MouseEvent e) {
+                 mouseHover = false;
+             }
+
+             @Override
+             public void mousePressed(MouseEvent e) {
+                 mousePress = true;
+             }
+
+             @Override
+             public void mouseReleased(MouseEvent e) {
+                 mousePress = false;
+             }
+         });
+     }
+
+     @Override
+     protected void paintComponent(Graphics g) {
+         Graphics2D g2 = (Graphics2D) g.create();
+         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+         g2.setComposite(AlphaComposite.SrcOver.derive(animate * 0.5f));
+         g2.setColor(scrollbar.getForeground().brighter());
+         int x = 0;
+         int y = isIncrease ? 8 : 0;
+         int width = getWidth();
+         int height = getHeight() - 8;
+         if (orientation == JScrollBar.VERTICAL) {
+             g2.fill(new Rectangle2D.Double(x, y, width, height));
+         } else {
+             g2.fill(new Rectangle2D.Double(y, x, height, width));
+         }
+         g2.setComposite(AlphaComposite.SrcOver.derive(animate));
+         if (mousePress) {
+             g2.setColor(new Color(110, 110, 110));
+         } else if (mouseHover) {
+             g2.setColor(new Color(130, 130, 130));
+         } else {
+             g2.setColor(scrollbar.getForeground());
+         }
+         double ax = scrollSize * 0.1f;
+         double ay = scrollSize * 0.15f;
+         g2.translate(ax, ay);
+         g2.fill(arrow);
+         g2.dispose();
+         super.paintComponent(g);
+     }
+ }
+}
+</code></pre><p>&#x7C7B;ScrollBarWin11UI&#x7EE7;&#x627F;&#x81EA;BasicScrollBarUI&#xFF0C;&#x8868;&#x793A;&#x65B0;&#x5EFA;&#x7684;&#x6EDA;&#x52A8;&#x9762;&#x677F;&#x662F;&#x57FA;&#x4E8E;&#x539F;&#x5F0F;ScrollBar&#x3002;&#x7136;&#x540E;&#x4E3A;&#x5B83;&#x52A0;&#x5165;&#x9F20;&#x6807;&#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x5411;&#x4E0A;&#x5411;&#x4E0B;&#x6EDA;&#x52A8;&#x7684;&#x6309;&#x952E;&#x3002;&#x7531;&#x4E8E;&#x91C7;&#x7528;&#x7684;win11&#x7248;&#x6EDA;&#x52A8;&#x6761;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x4E3A;&#x5B83;&#x521B;&#x9020;&#x9F20;&#x6807;&#x60AC;&#x505C;&#x5728;&#x6EDA;&#x8F6E;&#x4E0A;&#x4E4B;&#x540E;&#x6EDA;&#x8F6E;&#x53D8;&#x5316;&#x7684;&#x6BCF;&#x4E00;&#x5E27;&#x3002;&#x8FD9;&#x4E2A;&#x53D8;&#x5316;&#x8FC7;&#x7A0B;&#x7531;2D&#x7ED8;&#x56FE;&#x521B;&#x5EFA;&#x3002;</p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x6EDA;&#x52A8;&#x9762;&#x677F;&#xFF1A;&#x539F;&#x5148;&#x7684;scroller&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF1A;</p>
 <pre><code> JScrollPane scrollPane = new JScrollPane();
  scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
  scrollPane.setBorder(BorderFactory.createEmptyBorder()); //delete border
@@ -474,7 +731,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"UI美化","level":"1.5.2.1","depth":3,"next":{"title":"图片插入","level":"1.5.2.2","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md","articles":[]},"previous":{"title":"核心流程设计分析（拓展要求）","level":"1.5.2","depth":2,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09.md","articles":[{"title":"UI美化","level":"1.5.2.1","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.md","articles":[]},{"title":"图片插入","level":"1.5.2.2","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md","articles":[]},{"title":"插入表格","level":"1.5.2.3","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/cha-ru-biao-ge.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/cha-ru-biao-ge.md","articles":[]},{"title":"MarkDown编辑器","level":"1.5.2.4","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.md","mtime":"2023-11-27T09:06:24.390Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-27T16:16:05.026Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"UI美化","level":"1.5.2.1","depth":3,"next":{"title":"图片插入","level":"1.5.2.2","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md","articles":[]},"previous":{"title":"核心流程设计分析（拓展要求）","level":"1.5.2","depth":2,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09.md","articles":[{"title":"UI美化","level":"1.5.2.1","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.md","articles":[]},{"title":"图片插入","level":"1.5.2.2","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/tu-pian-cha-ru.md","articles":[]},{"title":"插入表格","level":"1.5.2.3","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/cha-ru-biao-ge.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/cha-ru-biao-ge.md","articles":[]},{"title":"MarkDown编辑器","level":"1.5.2.4","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/uimei-hua.md","mtime":"2023-12-18T10:52:51.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-18T11:19:15.956Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

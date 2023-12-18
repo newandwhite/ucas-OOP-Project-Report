@@ -58,7 +58,7 @@
 
     
     
-    <link rel="prev" href="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.html" />
+    <link rel="prev" href="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html" />
     
 
     </head>
@@ -321,6 +321,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.3" data-path="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.html">
+            
+                    
+                    核心流程设计分析（硬核要求）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html">
+            
+                    
+                    云存储接入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -385,6 +417,120 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x9AD8;&#x7EA7;&#x8BBE;&#x8BA1;&#x610F;&#x56FE;">&#x9AD8;&#x7EA7;&#x8BBE;&#x8BA1;&#x610F;&#x56FE;</h1>
+<h3 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;">&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;</h3>
+<ol>
+<li><p>&#x5C01;&#x88C5;
+&#x7C7B;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#x9690;&#x85CF;&#x4E86;&#x5185;&#x90E8;&#x7EC6;&#x8282;&#xFF0C;&#x5BF9;&#x5916;&#x90E8;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;&#x3002;&#x4F8B;&#x5982;&#xFF0C;Function_File&#x3001;Function_Edit &#x7B49;&#x7C7B;&#x5C01;&#x88C5;&#x4E86;&#x4E0E;&#x6587;&#x4EF6;&#x3001;&#x7F16;&#x8F91;&#x7B49;&#x529F;&#x80FD;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li><p>&#x591A;&#x6001;
+actionPerformed &#x65B9;&#x6CD5;&#x4E2D;&#x7684; switch &#x8BED;&#x53E5;&#x4E2D;&#x6D89;&#x53CA;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#xFF08;Function_File&#x3001;Function_Edit &#x7B49;&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x5171;&#x540C;&#x7684;&#x63A5;&#x53E3;&#x6765;&#x5904;&#x7406;&#x4E0D;&#x540C;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
+</li>
+<li><p>&#x7EE7;&#x627F;
+&#x4E00;&#x4E9B;&#x91CD;&#x5199;&#x4E0E;&#x590D;&#x7528;&#x7684;&#x7C7B;&#x7EE7;&#x627F;&#x67D0;&#x4E9B;&#x57FA;&#x7C7B;&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x4F8B;&#x5982;&#x4FEE;&#x6539;&#x8868;&#x683C;&#x683C;&#x5F0F;&#x7684;&#x7C7B;CustomCellRenderer extends&#x7EE7;&#x627F;&#x4E86;&#x7C7B; DefaultTableCellRenderer&#x3002;</p>
+</li>
+</ol>
+<hr>
+<h3 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</h3>
+<ol>
+<li><p>&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF1A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x53C2;&#x6570;&#x7684;&#x4E0D;&#x540C;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;
+&#x5305;&#x542B;&#x5FC5;&#x8981;&#x7684;&#x5224;&#x65AD;&#x903B;&#x8F91;&#xFF0C;&#x53EF;&#x4EE5;&#x51B3;&#x5B9A;&#x5728;&#x58F0;&#x660E;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x54EA;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x5B9E;&#x4F8B;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x514D;&#x9664;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#x7684;&#x804C;&#x8D23;&#xFF0C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x4E86;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x5206;&#x79BB;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x65E0;&#x9700;&#x77E5;&#x9053;&#x6240;&#x521B;&#x5EFA;&#x7684;&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#x7C7B;&#x7684;&#x7C7B;&#x540D;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#x7C7B;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x6570;&#x5373;&#x53EF;&#x3002;
+&#x4EE3;&#x7801;&#x4F7F;&#x7528; Function_Format &#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#xFF08;createFont&#xFF09;&#x521B;&#x5EFA;&#x5404;&#x79CD;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x88AB;&#x89C6;&#x4E3A;&#x7B80;&#x5355;&#x5F62;&#x5F0F;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>case &quot;size8&quot;:  format.createFont( 8); break;
+case &quot;size12&quot;: format.createFont(12); break;
+case &quot;size16&quot;: format.createFont(16); break;
+case &quot;size20&quot;: format.createFont(20); break;
+case &quot;size24&quot;: format.createFont(24); break;
+case &quot;size28&quot;: format.createFont(28); break;
+</code></pre></li>
+<li><p>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF1A;&#x786E;&#x4FDD;&#x4E00;&#x4E2A;&#x7C7B;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x800C;&#x4E14;&#x81EA;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#x5E76;&#x5411;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;
+UndoManager &#x7C7B;&#x7684;&#x5B9E;&#x4F8B; undoManager &#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x5BF9;&#x8C61;&#xFF0C;&#x786E;&#x4FDD;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x64A4;&#x9500;&#x548C;&#x91CD;&#x505A;&#x64CD;&#x4F5C;&#x3002;
+&#x672C;&#x5904;&#x91C7;&#x7528;&#x997F;&#x6C49;&#x6A21;&#x5F0F;&#x3002;&#x4E0B;&#x65B9;&#x4EE3;&#x7801;&#x5728;GUI&#x7C7B;&#x7684;JTextPane&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E2D;&#x3002;</p>
+<pre><code>UndoManager um = new UndoManager();
+textArea.addKeyListener(kHandler);
+textArea.getDocument().addUndoableEditListener(
+ new UndoableEditListener() {
+     @Override
+     public void undoableEditHappened(UndoableEditEvent e) {
+         um.addEdit(e.getEdit());
+     }
+ }
+);
+</code></pre></li>
+<li><p>&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#xFF1A;&#x5F53;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x6536;&#x5230;&#x901A;&#x77E5;&#x3002;
+&#x4E8B;&#x4EF6;&#x6E90;&#x7ECF;&#x8FC7;&#x4E8B;&#x4EF6;&#x7684;&#x5C01;&#x88C5;&#x4F20;&#x7ED9;&#x76D1;&#x542C;&#x5668;&#xFF0C;&#x5F53;&#x4E8B;&#x4EF6;&#x6E90;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x540E;&#xFF0C;&#x76D1;&#x542C;&#x5668;&#x63A5;&#x6536;&#x5230;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;
+&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x6E90;&#xFF0C;&#x4E8B;&#x4EF6;&#x6E90;&#x662F;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x7531;&#x4E8E;&#x4E8B;&#x4EF6;&#x6E90;&#x7684;&#x67D0;&#x9879;&#x5C5E;&#x6027;&#x6216;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x901A;&#x77E5;&#x7ED9;&#x6240;&#x6709;&#x76D1;&#x542C;&#x8BE5;&#x4E8B;&#x4EF6;&#x6E90;&#x7684;&#x76D1;&#x542C;&#x5668;&#x3002;</p>
+<ul>
+<li><p>&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;</p>
+<p>&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x4E00;&#x822C;&#x9700;&#x8981;&#x5B9E;&#x73B0;java.util.EventListener&#x63A5;&#x53E3;
+EventListener &#x662F;&#x4E2A;&#x7A7A;&#x63A5;&#x53E3;&#xFF0C;&#x76D1;&#x542C;&#x5668;&#x5FC5;&#x987B;&#x8981;&#x6709;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x4F9B;&#x4E8B;&#x4EF6;&#x6E90;&#x56DE;&#x8C03;&#xFF0C;&#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5728;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x5B9E;&#x73B0;EventListener &#x63A5;&#x53E3;&#x7684;&#x65F6;&#x5019;&#x81EA;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code>markdownTextArea.getDocument().addDocumentListener(new DocumentListener() {
+  @Override
+  public void insertUpdate(DocumentEvent e) {
+      scheduleUpdatePreview();
+  }
+
+  @Override
+  public void removeUpdate(DocumentEvent e) {
+      scheduleUpdatePreview();
+  }
+
+  @Override
+  public void changedUpdate(DocumentEvent e) {
+      scheduleUpdatePreview();
+  }
+});
+</code></pre><p>&#x5C55;&#x5F00;&#x540E;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>public interface DocumentListener extends EventListener {
+  public void insertUpdate(DocumentEvent e);
+  public void removeUpdate(DocumentEvent e);
+  public void changedUpdate(DocumentEvent e);
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#xFF1A;&#x5C06;&#x884C;&#x4E3A;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;&#x884C;&#x4E3A;&#x63A5;&#x53E3;&#x548C;&#x5177;&#x4F53;&#x884C;&#x4E3A;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x884C;&#x4E3A;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x66FF;&#x6362;&#x3002;
+wordWrap &#x65B9;&#x6CD5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E; JTextPane &#x7684; EditorKit &#x5B9E;&#x73B0;&#x4E86;&#x5BF9; Word Wrap &#x7B56;&#x7565;&#x7684;&#x5207;&#x6362;&#x3002;&#x901A;&#x8FC7;&#x5728; HTMLEditorKit &#x4E2D;&#x81EA;&#x5B9A;&#x4E49; ViewFactory &#x548C;&#x76F8;&#x5E94;&#x7684; View &#x5B50;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x5BF9;&#x6362;&#x884C;&#x65B9;&#x5F0F;&#x7684;&#x5B9A;&#x5236;&#x3002;</p>
+<pre><code>if(v instanceof InlineView){
+ return new InlineView(e){
+     public int getBreakWeight(int axis, float pos, float len) {
+         return GoodBreakWeight;
+     }
+     public View breakView(int axis, int p0, float pos, float len) {
+         if(axis == View.X_AXIS) {
+             checkPainter();
+             int p1 = getGlyphPainter().getBoundedPosition(this, p0, pos, len);
+             if(p0 == getStartOffset() &amp;&amp; p1 == getEndOffset()) {
+                 return this;
+             }
+             return createFragment(p0, p1);
+         }
+         return this;
+     }
+ };
+}
+else if (v instanceof ParagraphView) {
+ return new ParagraphView(e) {
+     protected SizeRequirements calculateMinorAxisRequirements(int axis, SizeRequirements r) {
+         if (r == null) {
+             r = new SizeRequirements();
+         }
+         float pref = layoutPool.getPreferredSpan(axis);
+         float min = layoutPool.getMinimumSpan(axis);
+         // Don&apos;t include insets, Box.getXXXSpan will include them.
+         r.minimum = (int)min;
+         r.preferred = Math.max(r.minimum, (int) pref);
+         r.maximum = Integer.MAX_VALUE;
+         r.alignment = 0.5f;
+         return r;
+     }
+
+ };
+}
+return v;
+</code></pre></li>
+</ol>
+<hr>
+<h3 id="&#x4E00;&#x4E9B;&#x76EE;&#x6807;">&#x4E00;&#x4E9B;&#x76EE;&#x6807;</h3>
 <ul>
 <li>UI&#x754C;&#x9762;&#x4F18;&#x5316;&#xFF08;&#x5DF2;&#x5B8C;&#x6210;&#xFF09;</li>
 <li>&#x63D2;&#x5165;&#x56FE;&#x7247;&#xFF08;&#x5DF2;&#x5B8C;&#x6210;&#xFF09;</li>
@@ -392,7 +538,7 @@
 <li>&#x652F;&#x6301;&#x63D2;&#x5165;&#x8868;&#x683C;&#xFF08;&#x5DF2;&#x5B8C;&#x6210;&#xFF09;</li>
 <li>&#x652F;&#x6301;markdown&#x7F16;&#x8F91;&#xFF08;&#x5DF2;&#x5B8C;&#x6210;&#xFF09;</li>
 <li>&#x5BFC;&#x5165;&#x5BFC;&#x51FA;</li>
-<li>&#x4E91;&#x5B58;&#x50A8;&#x63A5;&#x5165;</li>
+<li>&#x4E91;&#x5B58;&#x50A8;&#x63A5;&#x5165;&#xFF08;&#x5DF2;&#x5B8C;&#x6210;&#xFF09;</li>
 </ul>
 
                                 
@@ -421,7 +567,7 @@
 
             
                 
-                <a href="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: MarkDown编辑器">
+                <a href="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 云存储接入">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -433,7 +579,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"高级设计意图","level":"1.6","depth":1,"previous":{"title":"MarkDown编辑器","level":"1.5.2.4","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-tuo-zhan-yao-qiu-ff09/markdownbian-ji-qi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gao-ji-she-ji-yi-tu.md","mtime":"2023-11-27T07:03:22.384Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-27T16:16:05.026Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"高级设计意图","level":"1.6","depth":1,"previous":{"title":"云存储接入","level":"1.5.3.1","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gao-ji-she-ji-yi-tu.md","mtime":"2023-12-18T11:05:25.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-18T11:19:15.956Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

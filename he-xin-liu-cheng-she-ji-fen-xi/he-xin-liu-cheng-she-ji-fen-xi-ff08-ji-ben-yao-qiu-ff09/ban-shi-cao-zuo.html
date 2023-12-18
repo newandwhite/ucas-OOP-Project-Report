@@ -323,6 +323,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.3" data-path="../he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.html">
+            
+                <a href="../he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.html">
+            
+                    
+                    核心流程设计分析（硬核要求）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html">
+            
+                <a href="../he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html">
+            
+                    
+                    云存储接入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -388,12 +420,17 @@
                                 
                                 <h3 id="&#x7248;&#x5F0F;&#x64CD;&#x4F5C;">&#x7248;&#x5F0F;&#x64CD;&#x4F5C;</h3>
 <ol>
-<li>&#x81EA;&#x52A8;&#x6362;&#x884C;&#xFF1A;
-&#x539F;&#x5148;&#x91C7;&#x7528;&#x7684;JTextArea&#x5BF9;&#x8C61;&#x6709;&#x81EA;&#x52A8;&#x6362;&#x884C;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;JTextPane&#x6CA1;&#x6709;&#x5355;&#x72EC;&#x7684;&#x76F8;&#x5173;&#x51FD;&#x6570;&#x3002;&#x56E0;&#x6B64;&#x4E00;&#x79CD;&#x8C03;&#x6574;&#x81EA;&#x52A8;&#x6362;&#x884C;&#x7684;&#x601D;&#x8DEF;&#x662F;&#x5C06;&#x5F53;&#x524D;&#x6587;&#x672C;&#x8F6C;&#x6362;&#x4E3A;HTML&#x518D;&#x8BBE;&#x7F6E;&#x6362;&#x884C;&#x3002;<pre><code> if(v instanceof InlineView){
+<li><p>&#x81EA;&#x52A8;&#x6362;&#x884C;&#xFF1A;
+&#x539F;&#x5148;&#x91C7;&#x7528;&#x7684;JTextArea&#x5BF9;&#x8C61;&#x6709;&#x81EA;&#x52A8;&#x6362;&#x884C;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;JTextPane&#x6CA1;&#x6709;&#x5355;&#x72EC;&#x7684;&#x76F8;&#x5173;&#x51FD;&#x6570;&#x3002;&#x56E0;&#x6B64;&#x4E00;&#x79CD;&#x8C03;&#x6574;&#x81EA;&#x52A8;&#x6362;&#x884C;&#x7684;&#x601D;&#x8DEF;&#x662F;&#x5C06;&#x5F53;&#x524D;&#x6587;&#x672C;&#x8F6C;&#x6362;&#x4E3A;HTML&#x518D;&#x8BBE;&#x7F6E;&#x6362;&#x884C;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x89C6;&#x56FE;&#xFF08;InlineView &#x548C; ParagraphView&#xFF09;&#xFF0C;&#x8FDB;&#x884C;&#x4E86;&#x7279;&#x6B8A;&#x7684;&#x5904;&#x7406;&#x4EE5;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6362;&#x884C;&#x884C;&#x4E3A;&#x3002;</p>
+<p> InlineView&#xFF1A;</p>
+<pre><code>  if(v instanceof InlineView){
      return new InlineView(e){
+         // &#x91CD;&#x5199;&#x65B9;&#x6CD5;&#xFF0C;&#x8BBE;&#x7F6E;&#x6362;&#x884C;&#x6743;&#x91CD;
          public int getBreakWeight(int axis, float pos, float len) {
              return GoodBreakWeight;
          }
+
+         // &#x91CD;&#x5199;&#x65B9;&#x6CD5;&#xFF0C;&#x5904;&#x7406;&#x6362;&#x884C;
          public View breakView(int axis, int p0, float pos, float len) {
              if(axis == View.X_AXIS) {
                  checkPainter();
@@ -407,7 +444,8 @@
          }
      };
  }
-</code></pre>&#x4E00;&#x79CD;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x662F;&#x5C06;&#x5F53;&#x524D;&#x6362;&#x884C;&#x8BBE;&#x7F6E;&#x4E3A;&#x5355;&#x8BCD;&#x95F4;&#x6362;&#x884C;&#xFF0C;&#x5373;&#x9700;&#x8981;&#x5224;&#x65AD;&#x5141;&#x8BB8;&#x6362;&#x884C;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;&#x6362;&#x884C;&#x3002;<pre><code> protected SizeRequirements calculateMinorAxisRequirements(int axis, SizeRequirements r) {
+</code></pre><p>&#x4E00;&#x79CD;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x662F;&#x5C06;&#x5F53;&#x524D;&#x6362;&#x884C;&#x8BBE;&#x7F6E;&#x4E3A;&#x5355;&#x8BCD;&#x95F4;&#x6362;&#x884C;&#xFF0C;&#x5373;&#x9700;&#x8981;&#x5224;&#x65AD;&#x5141;&#x8BB8;&#x6362;&#x884C;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;&#x6362;&#x884C;&#x3002;</p>
+<pre><code> protected SizeRequirements calculateMinorAxisRequirements(int axis, SizeRequirements r) {
      if (r == null) {
          r = new SizeRequirements();
      }
@@ -419,13 +457,16 @@
      r.alignment = 0.5f;
      return r;
  }
-</code></pre>&#x4E0D;&#x8FC7;&#x76EE;&#x524D;&#x5728;&#x81EA;&#x52A8;&#x6362;&#x884C;&#x540E;&#x4E0D;&#x80FD;&#x518D;&#x5207;&#x6362;&#x56DE;&#x4E0D;&#x6362;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x56E0;&#x6B64;&#x81EA;&#x52A8;&#x6362;&#x884C;&#x8BBE;&#x7F6E;&#x529F;&#x80FD;&#x6682;&#x65F6;&#x4E0D;&#x80FD;&#x7528;&#x4E86;&#x3002;</li>
+</code></pre><p>&#x4E0D;&#x8FC7;&#x76EE;&#x524D;&#x5728;&#x81EA;&#x52A8;&#x6362;&#x884C;&#x540E;&#x4E0D;&#x80FD;&#x518D;&#x5207;&#x6362;&#x56DE;&#x4E0D;&#x6362;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x56E0;&#x6B64;&#x81EA;&#x52A8;&#x6362;&#x884C;&#x8BBE;&#x7F6E;&#x529F;&#x80FD;&#x6682;&#x65F6;&#x4E0D;&#x80FD;&#x7528;&#x4E86;&#x3002;</p>
+</li>
 <li>&#x5B57;&#x4F53;&#x8BBE;&#x7F6E;&#xFF1A;&#x9996;&#x5148;&#x5229;&#x7528;Font&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x5F85;&#x9009;&#x5B57;&#x4F53;&#xFF0C;&#x7136;&#x540E;&#x76F4;&#x63A5;&#x5229;&#x7528;setFont&#x51FD;&#x6570;&#x4F20;&#x5165;&#x8BE5;&#x5B57;&#x4F53;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x8BBE;&#x7F6E;&#x3002;<pre><code> arial = new Font(&quot;Arial&quot;, Font.PLAIN, fontSize);
  gui.textArea.setFont(arial);
 </code></pre></li>
-<li>&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF1A;&#x5229;&#x7528;createFont&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;<pre><code>format.createFont(8);
+<li>&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF1A;&#x5229;&#x7528;createFont&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;<pre><code> format.createFont(8);
 </code></pre></li>
 </ol>
+<h4 id="&#x6700;&#x7EC8;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;">&#x6700;&#x7EC8;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</h4>
+<p><img src="../../pic/format.png" alt=""></p>
 
                                 
                                 </section>
@@ -469,7 +510,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"版式操作","level":"1.5.1.4","depth":3,"next":{"title":"颜色设置","level":"1.5.1.5","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/yan-se-she-zhi.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/yan-se-she-zhi.md","articles":[]},"previous":{"title":"编辑操作","level":"1.5.1.3","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/bian-ji-cao-zuo.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/bian-ji-cao-zuo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/ban-shi-cao-zuo.md","mtime":"2023-11-27T14:50:58.482Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-27T16:16:05.026Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"版式操作","level":"1.5.1.4","depth":3,"next":{"title":"颜色设置","level":"1.5.1.5","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/yan-se-she-zhi.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/yan-se-she-zhi.md","articles":[]},"previous":{"title":"编辑操作","level":"1.5.1.3","depth":3,"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/bian-ji-cao-zuo.md","ref":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/bian-ji-cao-zuo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ji-ben-yao-qiu-ff09/ban-shi-cao-zuo.md","mtime":"2023-12-15T12:24:55.280Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-18T11:19:15.956Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

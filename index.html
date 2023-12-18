@@ -321,6 +321,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.3" data-path="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09.html">
+            
+                    
+                    核心流程设计分析（硬核要求）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html">
+            
+                <a href="he-xin-liu-cheng-she-ji-fen-xi/he-xin-liu-cheng-she-ji-fen-xi-ff08-ying-he-yao-qiu-ff09/yun-cun-chu-jie-ru.html">
+            
+                    
+                    云存储接入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -391,151 +423,223 @@
 <p>&#x9EC4;&#x94B0;&#x4E54;</p>
 <h4 id="software-architecture">Software Architecture</h4>
 <pre><code>|-- undefined
-    |-- .gitignore
-    |-- pom.xml
-    |-- TimingFramework-0.55.jar
-    |-- .idea
-    |   |-- .gitignore
-    |   |-- compiler.xml
-    |   |-- encodings.xml
-    |   |-- jarRepositories.xml
-    |   |-- misc.xml
-    |   |-- vcs.xml
-    |   |-- workspace.xml
-    |   |-- libraries
-    |       |-- lib.xml
-    |-- demo
-    |   |-- mvnw
-    |   |-- mvnw.cmd
-    |   |-- pom.xml
-    |   |-- .mvn
-    |   |   |-- wrapper
-    |   |       |-- maven-wrapper.jar
-    |   |       |-- maven-wrapper.properties
-    |   |-- src
-    |       |-- main
-    |           |-- java
-    |           |   |-- module-info.java
-    |           |   |-- com
-    |           |       |-- example
-    |           |           |-- demo
-    |           |               |-- HelloApplication.java
-    |           |               |-- HelloController.java
-    |           |-- resources
-    |               |-- com
-    |                   |-- example
-    |                       |-- demo
-    |                           |-- hello-view.fxml
-    |-- pic
-    |   |-- markdownicon.png
-    |-- src
-    |   |-- main
-    |   |   |-- java
-    |   |   |   |-- Function_Color.java
-    |   |   |   |-- Function_Edit.java
-    |   |   |   |-- Function_File.java
-    |   |   |   |-- Function_Format.java
-    |   |   |   |-- Function_Function.java
-    |   |   |   |-- Function_Insertion.java
-    |   |   |   |-- GUI.java
-    |   |   |   |-- KeyHandler.java
-    |   |   |   |-- cloud
-    |   |   |   |   |-- CloudStorageUIExample.java
-    |   |   |   |-- insertpicture
-    |   |   |   |   |-- ResizableImageComponent.java
-    |   |   |   |-- inserttable
-    |   |   |   |   |-- CustomCellRenderer.java
-    |   |   |   |   |-- JTextPaneWithTable.java
-    |   |   |   |-- insertvideo
-    |   |   |   |   |-- VideoPlayerExample.java
-    |   |   |   |-- markdownparser
-    |   |   |   |   |-- FlexmarkMarkdownEditor.java
-    |   |   |   |   |-- MarkdownEditor.java
-    |   |   |   |-- org
-    |   |   |   |   |-- example
-    |   |   |   |       |-- Main.java
-    |   |   |   |-- scalableimg
-    |   |   |   |   |-- JTextPaneWithScalableImage.java
-    |   |   |   |   |-- ScalableImagePanel.java
-    |   |   |   |-- scroll
-    |   |   |       |-- PolygonCorner.java
-    |   |   |       |-- ScrollBarWin11UI.java
-    |   |   |       |-- ScrollPaneWin11.java
-    |   |   |       |-- Test2.java
-    |   |   |-- resources
-    |   |       |-- org
-    |   |           |-- example
-    |   |               |-- application.css
-    |   |-- test
-    |       |-- java
-    |           |-- org
-    |               |-- example
-    |                   |-- AppTest.java
-    |-- target
-        |-- classes
-        |   |-- Function_Color.class
-        |   |-- Function_Edit.class
-        |   |-- Function_File.class
-        |   |-- Function_Format$1$1$1.class
-        |   |-- Function_Format$1$1$2.class
-        |   |-- Function_Format$1$1.class
-        |   |-- Function_Format$1.class
-        |   |-- Function_Format.class
-        |   |-- Function_Function.class
-        |   |-- Function_Insertion.class
-        |   |-- GUI$1.class
-        |   |-- GUI.class
-        |   |-- KeyHandler.class
-        |   |-- cloud
-        |   |   |-- CloudStorageUIExample$1.class
-        |   |   |-- CloudStorageUIExample.class
-        |   |-- insertpicture
-        |   |   |-- ResizableImageComponent$1.class
-        |   |   |-- ResizableImageComponent.class
-        |   |-- inserttable
-        |   |   |-- CustomCellRenderer.class
-        |   |   |-- JTextPaneWithTable$1.class
-        |   |   |-- JTextPaneWithTable$MultiLineTableCellRenderer.class
-        |   |   |-- JTextPaneWithTable.class
-        |   |-- markdownparser
-        |   |   |-- FlexmarkMarkdownEditor$1.class
-        |   |   |-- FlexmarkMarkdownEditor$2.class
-        |   |   |-- FlexmarkMarkdownEditor$3.class
-        |   |   |-- FlexmarkMarkdownEditor$4.class
-        |   |   |-- FlexmarkMarkdownEditor$5.class
-        |   |   |-- FlexmarkMarkdownEditor$6.class
-        |   |   |-- FlexmarkMarkdownEditor$7.class
-        |   |   |-- FlexmarkMarkdownEditor$CustomScrollBarUI$1.class
-        |   |   |-- FlexmarkMarkdownEditor$CustomScrollBarUI$2.class
-        |   |   |-- FlexmarkMarkdownEditor$CustomScrollBarUI.class
-        |   |   |-- FlexmarkMarkdownEditor.class
-        |   |   |-- MarkdownEditor$1.class
-        |   |   |-- MarkdownEditor$2.class
-        |   |   |-- MarkdownEditor$3.class
-        |   |   |-- MarkdownEditor.class
-        |   |-- org
-        |   |   |-- example
-        |   |       |-- application.css
-        |   |       |-- Main.class
-        |   |-- scalableimg
-        |   |   |-- JTextPaneWithScalableImage$1.class
-        |   |   |-- JTextPaneWithScalableImage.class
-        |   |   |-- ScalableImagePanel$1.class
-        |   |   |-- ScalableImagePanel$2.class
-        |   |   |-- ScalableImagePanel.class
-        |   |-- scroll
-        |       |-- PolygonCorner.class
-        |       |-- ScrollBarWin11UI$1.class
-        |       |-- ScrollBarWin11UI$2.class
-        |       |-- ScrollBarWin11UI$ScrollButton$1.class
-        |       |-- ScrollBarWin11UI$ScrollButton.class
-        |       |-- ScrollBarWin11UI.class
-        |       |-- ScrollPaneWin11$ScrollLayout.class
-        |       |-- ScrollPaneWin11.class
-        |       |-- Test2$1.class
-        |       |-- Test2.class
-        |-- generated-sources
-            |-- annotations
+    &#x2502;  .gitignore
+    &#x2502;  pom.xml
+    &#x2502;  TimingFramework-0.55.jar
+    &#x2502;  tree.txt
+    &#x2502;  
+    &#x251C;&#x2500;.idea
+    &#x2502;  &#x2502;  .gitignore
+    &#x2502;  &#x2502;  compiler.xml
+    &#x2502;  &#x2502;  encodings.xml
+    &#x2502;  &#x2502;  jarRepositories.xml
+    &#x2502;  &#x2502;  misc.xml
+    &#x2502;  &#x2502;  vcs.xml
+    &#x2502;  &#x2502;  workspace.xml
+    &#x2502;  &#x2502;  
+    &#x2502;  &#x2514;&#x2500;libraries
+    &#x2502;          lib.xml
+    &#x2502;          
+    &#x251C;&#x2500;demo
+    &#x2502;  &#x2502;  mvnw
+    &#x2502;  &#x2502;  mvnw.cmd
+    &#x2502;  &#x2502;  pom.xml
+    &#x2502;  &#x2502;  
+    &#x2502;  &#x251C;&#x2500;.mvn
+    &#x2502;  &#x2502;  &#x2514;&#x2500;wrapper
+    &#x2502;  &#x2502;          maven-wrapper.jar
+    &#x2502;  &#x2502;          maven-wrapper.properties
+    &#x2502;  &#x2502;          
+    &#x2502;  &#x2514;&#x2500;src
+    &#x2502;      &#x2514;&#x2500;main
+    &#x2502;          &#x251C;&#x2500;java
+    &#x2502;          &#x2502;  &#x2502;  module-info.java
+    &#x2502;          &#x2502;  &#x2502;  
+    &#x2502;          &#x2502;  &#x2514;&#x2500;com
+    &#x2502;          &#x2502;      &#x2514;&#x2500;example
+    &#x2502;          &#x2502;          &#x2514;&#x2500;demo
+    &#x2502;          &#x2502;                  HelloApplication.java
+    &#x2502;          &#x2502;                  HelloController.java
+    &#x2502;          &#x2502;                  
+    &#x2502;          &#x2514;&#x2500;resources
+    &#x2502;              &#x2514;&#x2500;com
+    &#x2502;                  &#x2514;&#x2500;example
+    &#x2502;                      &#x2514;&#x2500;demo
+    &#x2502;                              hello-view.fxml
+    &#x2502;                              
+    &#x251C;&#x2500;pic
+    &#x2502;      markdownicon.png
+    &#x2502;      
+    &#x251C;&#x2500;src
+    &#x2502;  &#x251C;&#x2500;main
+    &#x2502;  &#x2502;  &#x251C;&#x2500;java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  Function_Color.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  Function_Edit.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  Function_File.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  Function_Format.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  Function_Function.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  Function_Insertion.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  GUI.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  KeyHandler.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  
+    &#x2502;  &#x2502;  &#x2502;  &#x251C;&#x2500;cloud
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      AliyunOSSFileUploaderDownloader.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      CloudStorageUIExample.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x2502;  &#x251C;&#x2500;insertpicture
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      ResizableImageComponent.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x2502;  &#x251C;&#x2500;inserttable
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      CustomCellRenderer.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      JTextPaneWithTable.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x2502;  &#x251C;&#x2500;insertvideo
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      VideoPlayerExample.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x2502;  &#x251C;&#x2500;markdownparser
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      MarkdownEditor.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x2502;  &#x251C;&#x2500;org
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;  &#x2514;&#x2500;example
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;          Main.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;          
+    &#x2502;  &#x2502;  &#x2502;  &#x251C;&#x2500;scalableimg
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      JTextPaneWithScalableImage.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      ScalableImagePanel.java
+    &#x2502;  &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x2502;  &#x2514;&#x2500;scroll
+    &#x2502;  &#x2502;  &#x2502;          PolygonCorner.java
+    &#x2502;  &#x2502;  &#x2502;          ScrollBarWin11UI.java
+    &#x2502;  &#x2502;  &#x2502;          ScrollPaneWin11.java
+    &#x2502;  &#x2502;  &#x2502;          Test2.java
+    &#x2502;  &#x2502;  &#x2502;          
+    &#x2502;  &#x2502;  &#x2514;&#x2500;resources
+    &#x2502;  &#x2502;      &#x2514;&#x2500;org
+    &#x2502;  &#x2502;          &#x2514;&#x2500;example
+    &#x2502;  &#x2502;                  application.css
+    &#x2502;  &#x2502;                  
+    &#x2502;  &#x2514;&#x2500;test
+    &#x2502;      &#x2514;&#x2500;java
+    &#x2502;          &#x2514;&#x2500;org
+    &#x2502;              &#x2514;&#x2500;example
+    &#x2502;                      AppTest.java
+    &#x2502;                      
+    &#x251C;&#x2500;target
+    &#x2502;  &#x251C;&#x2500;classes
+    &#x2502;  &#x2502;  &#x2502;  Function_Color.class
+    &#x2502;  &#x2502;  &#x2502;  Function_Edit.class
+    &#x2502;  &#x2502;  &#x2502;  Function_File.class
+    &#x2502;  &#x2502;  &#x2502;  Function_Format$1$1$1.class
+    &#x2502;  &#x2502;  &#x2502;  Function_Format$1$1$2.class
+    &#x2502;  &#x2502;  &#x2502;  Function_Format$1$1.class
+    &#x2502;  &#x2502;  &#x2502;  Function_Format$1.class
+    &#x2502;  &#x2502;  &#x2502;  Function_Format.class
+    &#x2502;  &#x2502;  &#x2502;  Function_Function.class
+    &#x2502;  &#x2502;  &#x2502;  Function_Insertion.class
+    &#x2502;  &#x2502;  &#x2502;  GUI$1.class
+    &#x2502;  &#x2502;  &#x2502;  GUI.class
+    &#x2502;  &#x2502;  &#x2502;  KeyHandler.class
+    &#x2502;  &#x2502;  &#x2502;  
+    &#x2502;  &#x2502;  &#x251C;&#x2500;cloud
+    &#x2502;  &#x2502;  &#x2502;      AliyunOSSFileUploaderDownloader$1.class
+    &#x2502;  &#x2502;  &#x2502;      AliyunOSSFileUploaderDownloader$2.class
+    &#x2502;  &#x2502;  &#x2502;      AliyunOSSFileUploaderDownloader$CustomScrollBarUI$1.class
+    &#x2502;  &#x2502;  &#x2502;      AliyunOSSFileUploaderDownloader$CustomScrollBarUI$2.class
+    &#x2502;  &#x2502;  &#x2502;      AliyunOSSFileUploaderDownloader$CustomScrollBarUI.class
+    &#x2502;  &#x2502;  &#x2502;      AliyunOSSFileUploaderDownloader.class
+    &#x2502;  &#x2502;  &#x2502;      CloudStorageUIExample$1.class
+    &#x2502;  &#x2502;  &#x2502;      CloudStorageUIExample.class
+    &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x251C;&#x2500;insertpicture
+    &#x2502;  &#x2502;  &#x2502;      ResizableImageComponent$1.class
+    &#x2502;  &#x2502;  &#x2502;      ResizableImageComponent.class
+    &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x251C;&#x2500;inserttable
+    &#x2502;  &#x2502;  &#x2502;      CustomCellRenderer.class
+    &#x2502;  &#x2502;  &#x2502;      JTextPaneWithTable$1.class
+    &#x2502;  &#x2502;  &#x2502;      JTextPaneWithTable$MultiLineTableCellRenderer.class
+    &#x2502;  &#x2502;  &#x2502;      JTextPaneWithTable.class
+    &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x251C;&#x2500;markdownparser
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$1.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$2.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$3.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$4.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$5.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$6.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$7.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$CustomScrollBarUI$1.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$CustomScrollBarUI$2.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor$CustomScrollBarUI.class
+    &#x2502;  &#x2502;  &#x2502;      FlexmarkMarkdownEditor.class
+    &#x2502;  &#x2502;  &#x2502;      MarkdownEditor$1.class
+    &#x2502;  &#x2502;  &#x2502;      MarkdownEditor$2.class
+    &#x2502;  &#x2502;  &#x2502;      MarkdownEditor$3.class
+    &#x2502;  &#x2502;  &#x2502;      MarkdownEditor.class
+    &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x251C;&#x2500;org
+    &#x2502;  &#x2502;  &#x2502;  &#x2514;&#x2500;example
+    &#x2502;  &#x2502;  &#x2502;          application.css
+    &#x2502;  &#x2502;  &#x2502;          Main.class
+    &#x2502;  &#x2502;  &#x2502;          
+    &#x2502;  &#x2502;  &#x251C;&#x2500;scalableimg
+    &#x2502;  &#x2502;  &#x2502;      JTextPaneWithScalableImage$1.class
+    &#x2502;  &#x2502;  &#x2502;      JTextPaneWithScalableImage.class
+    &#x2502;  &#x2502;  &#x2502;      ScalableImagePanel$1.class
+    &#x2502;  &#x2502;  &#x2502;      ScalableImagePanel$2.class
+    &#x2502;  &#x2502;  &#x2502;      ScalableImagePanel.class
+    &#x2502;  &#x2502;  &#x2502;      
+    &#x2502;  &#x2502;  &#x2514;&#x2500;scroll
+    &#x2502;  &#x2502;          PolygonCorner.class
+    &#x2502;  &#x2502;          ScrollBarWin11UI$1.class
+    &#x2502;  &#x2502;          ScrollBarWin11UI$2.class
+    &#x2502;  &#x2502;          ScrollBarWin11UI$ScrollButton$1.class
+    &#x2502;  &#x2502;          ScrollBarWin11UI$ScrollButton.class
+    &#x2502;  &#x2502;          ScrollBarWin11UI.class
+    &#x2502;  &#x2502;          ScrollPaneWin11$ScrollLayout.class
+    &#x2502;  &#x2502;          ScrollPaneWin11.class
+    &#x2502;  &#x2502;          Test2$1.class
+    &#x2502;  &#x2502;          Test2.class
+    &#x2502;  &#x2502;          
+    &#x2502;  &#x251C;&#x2500;generated-sources
+    &#x2502;  &#x2502;  &#x2514;&#x2500;annotations
+    &#x2502;  &#x251C;&#x2500;generated-test-sources
+    &#x2502;  &#x2502;  &#x2514;&#x2500;test-annotations
+    &#x2502;  &#x2514;&#x2500;test-classes
+    &#x2502;      &#x2514;&#x2500;org
+    &#x2502;          &#x2514;&#x2500;example
+    &#x2502;                  AppTest.class
+    &#x2502;                  
+    &#x2514;&#x2500;uml
+        &#x2502;  clouduml.puml
+        &#x2502;  coloruml.puml
+        &#x2502;  edituml.puml
+        &#x2502;  fileuml.puml
+        &#x2502;  formatuml.puml
+        &#x2502;  functionuml.puml
+        &#x2502;  guiuml.puml
+        &#x2502;  insertionuml.puml
+        &#x2502;  keyuml.puml
+        &#x2502;  mdparderuml.puml
+        &#x2502;  pictureuml.puml
+        &#x2502;  scrolluml.puml
+        &#x2502;  tableuml.puml
+        &#x2502;  
+        &#x2514;&#x2500;umlpic
+                clouduml.png
+                coloruml.png
+                edituml.png
+                fileuml.png
+                formatuml.png
+                functionuml.png
+                guiuml.png
+                insertionuml.png
+                keyuml.png
+                mdparderuml.png
+                pictureuml.png
+                scrolluml.png
+                tableuml.png
 </code></pre><h4 id="installation">Installation</h4>
 <ol>
 <li>&#x5B89;&#x88C5;java&#xFF0C;&#x914D;&#x7F6E;&#x76F8;&#x5E94;&#x73AF;&#x5883;</li>
@@ -599,7 +703,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"项目介绍","level":"1.2","depth":1,"path":"xiang-mu-jie-shao.md","ref":"xiang-mu-jie-shao.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2023-11-27T16:15:03.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-27T16:16:05.026Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"项目介绍","level":"1.2","depth":1,"path":"xiang-mu-jie-shao.md","ref":"xiang-mu-jie-shao.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2023-12-18T10:33:41.902Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-18T11:19:15.956Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
